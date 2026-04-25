@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Этапы выполнения </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            background: #e8dfd9;
+            color: #5f4b8b;
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .back-link a:hover {
+            background: #d9cfe8;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Лабораторная работа №5</h1>
+        
+    </header>
+
+  
+   
+
+    
+    <section class="task">
+        <h2>1. Обновление таблицы в  базе данных</h2>
+        <div class="step">
+            <div class="desc">
+                <p>В соответствии с заданием созданы три таблицы:</p>
+                <ul>
+                    <li><code>application</code> – основные данные анкеты</li>
+                    <li><code>language</code> – справочник языков программирования</li>
+                    <li><code>application_language</code> – связующая таблица (многие ко многим)</li>
+                </ul>
+                <p>Таблицы созданы с учётом 3-й нормальной формы, внешними ключами и каскадным удалением.<br>
+                В таблицу <code>language</code> добавлены 12 языков из задания.</p>
+            </div>
+            <div class="screenshot">
+                <img src="bd.png" alt="Создание таблиц">
+                <div class="caption">Скриншот 1: SQL-запросы создания таблиц и заполнение языков</div>
+            </div>
+        </div>
+    </section>
+
+    
+   
+
+    
+    <div class="back-link">
+        <a href="index.php">← Вернуться к анкете</a>
+    </div>
+
+   
+</div>
+</body>
+</html>
