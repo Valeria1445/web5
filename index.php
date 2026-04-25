@@ -19,7 +19,7 @@ function dbConnect() {
     if ($db === null) {
         $host = 'localhost';
         $user = 'u82358';
-        $pass = '8445612';   // замените на реальный пароль
+        $pass = '8445612';   
         $name = 'u82358';
         try {
             $db = new PDO("mysql:host=$host;dbname=$name;charset=utf8mb4", $user, $pass);

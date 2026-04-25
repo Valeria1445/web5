@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение БД </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            background: #e8dfd9;
+            color: #5f4b8b;
+            padding: 8px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .back-link a:hover {
+            background: #d9cfe8;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+          <h1>Изменение структуры базы данных</h1>
+        <p class="subtitle">Добавление полей <code>login</code> и <code>password_hash</code> в таблицу <code>application</code></p>
+    </header>
+
+  
+   
+
+    
+     <section class="task">
+        <h2>Цель изменения</h2>
+        <div class="desc">
+            <p>Для реализации авторизации в лабораторной работе №5 в таблицу <code>application</code> были добавлены два новых поля:</p>
+            <ul>
+                <li><code>login</code> – уникальное имя пользователя (генерируется автоматически при первой отправке анкеты);</li>
+                <li><code>password_hash</code> – хеш пароля (сохраняется с помощью <code>password_hash()</code>).</li>
+            </ul>
+            <p>Это позволяет хранить учётные данные безопасно и использовать их для входа в систему.</p>
+        </div>
+    </section>
+
+    <section class="task">
+        <h2>Выполненный SQL-запрос</h2>
+        <div class="command">
+            <pre>ALTER TABLE application
+    ADD COLUMN login VARCHAR(50) UNIQUE DEFAULT NULL,
+    ADD COLUMN password_hash VARCHAR(255) DEFAULT NULL;</pre>
+        </div>
+        <div class="desc">
+            <p>Команда выполнена в консоли MySQL после подключения к базе данных <code>u82358</code>.</p>
+            <ul>
+                <li><strong>VARCHAR(50) UNIQUE</strong> – логин не может повторяться.</li>
+                <li><strong>DEFAULT NULL</strong> – для старых записей значение остаётся пустым, но новые анкеты будут его получать.</li>
+                <li><strong>VARCHAR(255)</strong> – достаточно для хранения хеша (BCrypt).</li>
+            </ul>
+        </div>
+        <div class="screenshot">
+            <img src="bd.png" alt="ALTER TABLE в MySQL">
+            <div class="caption">Скриншот: Добавление колонок login и password_hash</div>
+        </div>
+    </section>
+
+    <section class="task">
+        <h2>Результат</h2>
+        <div class="desc">
+            <p>После выполнения запроса таблица <code>application</code> готова к работе с системой логинов. Теперь при первой отправке формы генерируются уникальный логин и пароль, которые сохраняются в эти поля. При последующем входе введённый пароль сверяется с хешем.</p>
+            <p>Запрос выполнен успешно (строка <span style="color:#5f4b8b;">"Query OK, 0 rows affected"</span>).</p>
+        </div>
+    </section>
+
+    
+   
+
+    
+    <div class="back-link">
+        <a href="index.php">← Вернуться к анкете</a>
+    </div>
+
+   
+</div>
+</body>
+</html>

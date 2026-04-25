@@ -130,9 +130,11 @@
         <button type="submit"><?= $user_is_logged_in ? 'Сохранить изменения' : 'Сохранить' ?></button>
     </form>
 
-    <div class="footer-links">
+    <div class="back-link">
         <a href="login.php">🔐 Войти (если уже есть логин/пароль)</a>
         <a href="v.php">📊 Просмотреть сохранённые анкеты</a>
+         <a href="bd.html">⚙ Изменения в БД</a>
+
     </div>
     <?php if (!$user_is_logged_in): ?>
         <div class="back-link" style="margin-top: 15px;">
