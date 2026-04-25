@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-<div class="container">
+<div class="form-container">
     <header>
         <h1>Вход в систему</h1>
         <p class="subtitle">Введите логин и пароль, которые были выданы при первой отправке формы</p>

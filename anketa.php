@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<div class="form-container">
     <header>
         <h1>Анкета</h1>
         <p class="subtitle">Заполните форму – при первой отправке будут сгенерированы логин и пароль</p>
